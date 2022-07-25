@@ -1,0 +1,58 @@
+package com.avaliacao.model;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+//Anotações são parameteos que definem seus comportamentos para elas.
+@Entity // <----Essa anotação indica que uma entidade do JPA Hibernete.
+@Table(name = "postagens") //<---- Essa anotação faz com que essa entidade dentro do banco de dados vire uma tabela.
+public class Postagem {
+
+	// Adicionando as atributos
+	
+	@Id // Anotação que faz com que esse atributo seja um id.
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	private String titulo;
+	private String texto;
+	private Date date = new java.sql.Date(System.currentTimeMillis());
+
+	// Getters and Setters
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getTexto() {
+		return texto;
+	}
+
+	public void setTexto(String texto) {
+		this.texto = texto;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+}

@@ -1,0 +1,28 @@
+package com.avaliacao.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.avaliacao.repository.PostagemRepository;
+
+@RestController //<---- Anotação que informa para o spring que e essa classe se trata de um controlador.
+@RequestMapping("/go") // Anotação que informa qual uri que essa classe vai ser acessada. Apartir do momento que vier uma requisição do "/go" ele vai passar a consumir essa classe. 
+public class PostagemController {
+	
+	@Autowired
+	private PostagemRepository repository;
+	
+	public ResponseEntity<List> GetAll(){
+		return ResponseEntity.ok(repository.findAll());
+	}
+	
+	@GetMapping
+	public String go() {
+		return "Go Alexadria!";
+	}
+}

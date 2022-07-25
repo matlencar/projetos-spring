@@ -1,0 +1,9 @@
+package com.avaliacao.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.avaliacao.model.Postagem;
+
+public interface PostagemRepository extends JpaRepository<Postagem, Long> {
+	
+	
+}

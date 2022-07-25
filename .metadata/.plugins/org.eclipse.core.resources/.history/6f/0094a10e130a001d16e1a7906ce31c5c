@@ -1,0 +1,12 @@
+package com.avaliacao.model;
+
+import java.util.Date;
+
+public class Postagem {
+	
+	//Adicionando as Variaveis
+	private long id;
+	private String titulo;
+	private String texto;
+	private Date date;
+}
